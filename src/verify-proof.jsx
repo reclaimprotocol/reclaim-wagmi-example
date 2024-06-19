@@ -18,7 +18,7 @@ export default function VerifyProof(props) {
       <button
         className="button"
         onClick={async () => {
-            console.log(proof)
+          console.log(proof);
           const hash = await writeContract(config, {
             abi: abi,
             address: "0xe79A453bD088F4A58656b315a7C1f8Ea3473CCf1", //TODO : replace with your contract's address
