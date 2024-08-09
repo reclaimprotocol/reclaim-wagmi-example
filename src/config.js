@@ -1,15 +1,16 @@
 import { http, createConfig } from "wagmi";
-import { mainnet, sepolia, polygonMumbai, celoAlfajores } from "wagmi/chains";
+import { mainnet, sepolia, polygonMumbai, celoAlfajores, polygonAmoy } from "wagmi/chains";
 import { injected } from "wagmi/connectors";
 
 export const config = createConfig({
-    chains: [mainnet, sepolia, polygonMumbai, celoAlfajores],
+    chains: [mainnet, sepolia, polygonMumbai, celoAlfajores, polygonAmoy],
     connectors: [injected()],
     transports: {
         [mainnet.id]: http(),
         [sepolia.id]: http(),
         [polygonMumbai.id]: http(),
         [celoAlfajores.id]: http(),
+        [polygonAmoy.id]: http(),
     },
 });
 
