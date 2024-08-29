@@ -1,9 +1,9 @@
 import { http, createConfig } from "wagmi";
-import { mainnet, sepolia, polygonMumbai, celoAlfajores, polygonAmoy } from "wagmi/chains";
+import { mainnet, sepolia, polygonMumbai, celoAlfajores, polygonAmoy, redbellyTestnet } from "wagmi/chains";
 import { injected } from "wagmi/connectors";
 
 export const config = createConfig({
-    chains: [mainnet, sepolia, polygonMumbai, celoAlfajores, polygonAmoy],
+    chains: [mainnet, sepolia, polygonMumbai, celoAlfajores, polygonAmoy, redbellyTestnet],
     connectors: [injected()],
     transports: {
         [mainnet.id]: http(),
@@ -11,27 +11,29 @@ export const config = createConfig({
         [polygonMumbai.id]: http(),
         [celoAlfajores.id]: http(),
         [polygonAmoy.id]: http(),
+        [redbellyTestnet.id]: http(),
     },
 });
 
-export const SMOKE_PROOF = {
-    "identifier": "0x9ec8f9f52623234433ce5ea0cc0f5aac0dfbeef553e68d2d403633bd9192e365",
-    "claimData": {
-        "provider": "http",
-        "parameters": "{\"body\":\"\",\"geoLocation\":\"in\",\"method\":\"GET\",\"paramValues\":{\"CLAIM_DATA\":\"76561199614512180\"},\"responseMatches\":[{\"type\":\"contains\",\"value\":\"_steamid\\\">Steam ID: {{CLAIM_DATA}}</div>\"}],\"responseRedactions\":[{\"jsonPath\":\"\",\"regex\":\"_steamid\\\">Steam ID: (.*)</div>\",\"xPath\":\"id(\\\"responsive_page_template_content\\\")/div[@class=\\\"page_header_ctn\\\"]/div[@class=\\\"page_content\\\"]/div[@class=\\\"youraccount_steamid\\\"]\"}],\"url\":\"https://store.steampowered.com/account/\"}",
-        "owner": "0xa1b6e6ffb85df5bdf78e6558d3224ab87f7cc4c7",
-        "timestampS": 1717053708,
-        "context": "{\"contextAddress\":\"user's address\",\"contextMessage\":\"for acmecorp.com on 1st january\",\"extractedParameters\":{\"CLAIM_DATA\":\"76561199614512180\"},\"providerHash\":\"0x5f5312e27124dc7605f70a7d884e169049679b93f91c137b4d18a8569d825900\"}",
-        "identifier": "0x9ec8f9f52623234433ce5ea0cc0f5aac0dfbeef553e68d2d403633bd9192e365",
-        "epoch": 1
-    },
-    "signatures": [
-        "0xcbad077154cc5c8e494576d4336f57972f7412058c1a637e05832c6bdabd018f4da18ad973f29553921d7d030370032addac1159146b77ec6cc5dab4133ffec01c"
-    ],
-    "witnesses": [
-        {
-            "id": "0x244897572368eadf65bfbc5aec98d8e5443a9072",
-            "url": "https://reclaim-node.questbook.app"
-        }
-    ]
+export const PROOF = {
+  "identifier": "0x1d50794efd618226678a1791ff0a62ebce951543e2715b57a4371870f1e21364",
+  "claimData": {
+      "provider": "http",
+      "parameters": "{\"body\":\"\",\"geoLocation\":\"in\",\"method\":\"GET\",\"paramValues\":{\"CLAIM_DATA\":\"76561199614512180\"},\"responseMatches\":[{\"type\":\"contains\",\"value\":\"_steamid\\\">Steam ID: {{CLAIM_DATA}}</div>\"}],\"responseRedactions\":[{\"jsonPath\":\"\",\"regex\":\"_steamid\\\">Steam\\\\ ID:\\\\ (.*)</div>\",\"xPath\":\"id(\\\"responsive_page_template_content\\\")/div[@class=\\\"page_header_ctn\\\"]/div[@class=\\\"page_content\\\"]/div[@class=\\\"youraccount_steamid\\\"]\"}],\"url\":\"https://store.steampowered.com/account/\"}",
+      "owner": "0x8e87e3605b15a028188fde5f4ce03e87d55a2b4f",
+      "timestampS": 1724909052,
+      "context": "{\"contextAddress\":\"user's address\",\"contextMessage\":\"for acmecorp.com on 1st january\",\"extractedParameters\":{\"CLAIM_DATA\":\"76561199614512180\"},\"providerHash\":\"0x61433e76ff18460b8307a7e4236422ac66c510f0f9faff2892635c12b7c1076e\"}",
+      "identifier": "0x1d50794efd618226678a1791ff0a62ebce951543e2715b57a4371870f1e21364",
+      "epoch": 1
+  },
+  "signatures": [
+      "0x4a2441b35b1457e4c314dc20f727e59bb72d0679cca3699b5c1988777d6700114167bff4bd8d40bcf755b7f75704517f6c261db7118d8e17269f5bd10a208f221c"
+  ],
+  "witnesses": [
+      {
+          "id": "0x244897572368eadf65bfbc5aec98d8e5443a9072",
+          "url": "wss://witness.reclaimprotocol.org/ws"
+      }
+  ],
+  "publicData": null
 }
