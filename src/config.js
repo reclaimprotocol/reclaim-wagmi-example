@@ -1,9 +1,9 @@
 import { http, createConfig } from "wagmi";
-import { mainnet, sepolia, polygonMumbai, celoAlfajores, polygonAmoy, redbellyTestnet } from "wagmi/chains";
+import { mainnet, sepolia, polygonMumbai, celoAlfajores, polygonAmoy, redbellyTestnet, optimism, optimismSepolia } from "wagmi/chains";
 import { injected } from "wagmi/connectors";
 
 export const config = createConfig({
-    chains: [mainnet, sepolia, polygonMumbai, celoAlfajores, polygonAmoy, redbellyTestnet],
+    chains: [mainnet, sepolia, polygonMumbai, celoAlfajores, polygonAmoy, redbellyTestnet, optimism, optimismSepolia],
     connectors: [injected()],
     transports: {
         [mainnet.id]: http(),
@@ -12,6 +12,8 @@ export const config = createConfig({
         [celoAlfajores.id]: http(),
         [polygonAmoy.id]: http(),
         [redbellyTestnet.id]: http(),
+        [optimism.id]: http("https://optimism.llamarpc.com	"),
+        [optimismSepolia.id]: http(),
     },
 });
 

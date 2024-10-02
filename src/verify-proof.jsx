@@ -21,9 +21,9 @@ export default function VerifyProof(props) {
           console.log(proof);
           const hash = await writeContract(config, {
             abi: abi,
-            address: "0xe79A453bD088F4A58656b315a7C1f8Ea3473CCf1", //TODO : replace with your contract's address
+            address: "0xB238380c4C6C1a7eD9E1808B1b6fcb3F1B2836cF", //TODO : replace with your contract's address
             functionName: "verifyProof",
-            chainId: 44787, //TODO : replace with your chain id
+            chainId: 10, //TODO : replace with your chain id
             args: [proof],
           });
           if (hash) {
