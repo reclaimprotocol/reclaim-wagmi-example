@@ -12,7 +12,7 @@ export const config = createConfig({
         [celoAlfajores.id]: http(),
         [polygonAmoy.id]: http(),
         [redbellyTestnet.id]: http(),
-        [optimism.id]: http("https://optimism.llamarpc.com	"),
+        [optimism.id]: http("https://optimism.llamarpc.com"),
         [optimismSepolia.id]: http(),
     },
 });
