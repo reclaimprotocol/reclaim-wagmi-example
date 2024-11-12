@@ -2,14 +2,14 @@ import { useState, useEffect } from "react";
 import { writeContract } from "@wagmi/core";
 import { abi } from "./abi";
 import { config } from "./config";
-import { Reclaim } from "@reclaimprotocol/js-sdk";
+import { transformForOnchain } from "@reclaimprotocol/js-sdk";
 
 export default function VerifyProof(props) {
   const [proof, setProof] = useState({});
   const [verified, setVerified] = useState(false);
 
   useEffect(() => {
-    const newProof = Reclaim.transformForOnchain(props.proof);
+    const newProof = transformForOnchain(props.proof);
     setProof(newProof);
   }, []);
 
