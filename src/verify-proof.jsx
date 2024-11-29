@@ -21,9 +21,9 @@ export default function VerifyProof(props) {
           console.log(proof);
           const hash = await writeContract(config, {
             abi: abi,
-            address: "0xB238380c4C6C1a7eD9E1808B1b6fcb3F1B2836cF", //TODO : replace with your contract's address
+            address: "0xF90085f5Fd1a3bEb8678623409b3811eCeC5f6A5", //TODO : This is Base Sepolia contract, replace with your contract's address
             functionName: "verifyProof",
-            chainId: 10, //TODO : replace with your chain id
+            chainId: 84532, //TODO : This is Base Sepolia chain id replace with your chain id
             args: [proof],
           });
           if (hash) {

@@ -59,13 +59,13 @@ function App() {
     setStatusUrl(status);
 
     await reclaimProofRequest.startSession({
-      onSuccessCallback: (proof) => {
+      onSuccess: (proof) => {
         console.log("Verification success", proof);
         setReady(true);
         setProof(proof);
         // Your business logic here
       },
-      onFailureCallback: (error) => {
+      onFailure: (error) => {
         console.error("Verification failed", error);
         // Your business logic here to handle the error
       },
