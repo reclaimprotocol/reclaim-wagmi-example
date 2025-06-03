@@ -23,7 +23,7 @@ export default function VerifyProof(props) {
             abi: abi,
             address: "0x8CDc031d5B7F148ab0435028B16c682c469CEfC3", //TODO : This is Base mainnet contract, replace with your contract's address
             functionName: "verifyProof",
-            chainId: 8453, //TODO : This is Base Sepolia chain id, replace with your chain id
+            chainId: 8453, //TODO : This is Base mainnet chain id, replace with your chain id
             args: [proof],
           });
           if (hash) {
