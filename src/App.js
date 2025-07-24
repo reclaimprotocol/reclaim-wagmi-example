@@ -26,10 +26,13 @@ function App() {
 
   useEffect(() => {
     async function initializeReclaim() {
-      const APP_ID = "0x6E0338a6D8594101Ea9e13840449242015d71B19"; // This is an example App Id Replace it with your App Id.
-      const APP_SECRET =
-        "0x1e0d6a6548b72286d747b4ac9f2ad6b07eba8ad6a99cb1191890ea3f77fae48f"; // This is an example App Secret Replace it with your App Secret.
-      const PROVIDER_ID = "6d3f6753-7ee6-49ee-a545-62f1b1822ae5"; // This is GitHub Provider Id Replace it with the provider id you want to use.
+      // Your credentials from the Reclaim Developer Portal
+    // Replace these with your actual credentials
+    const APP_ID = '0x4c8e08f2B5AeD9504C888A327BaaCd6Ea617e18B'
+    const APP_SECRET =
+      '0x65507a8cf531019090e334630e74655168a7cbed6a95cc2c285a4d5653f8f7b4'
+    const PROVIDER_ID = 'c94476a0-8a75-4563-b70a-bf6124d7c59b'
+
 
       const proofRequest = await ReclaimProofRequest.init(
         APP_ID,
